@@ -20,30 +20,10 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/icon-home.png",
-        "selectedIconPath": "images/icon-home.png"
-      },
-      {
-        "pagePath": "pages/data/data",
-        "text": "数据",
-        "iconPath": "images/icon-data.png",
-        "selectedIconPath": "images/icon-data.png"
-      },
-      {
-        "pagePath": "pages/ai/ai",
-        "text": "AI顾问",
-        "iconPath": "images/icon-ai.png",
-        "selectedIconPath": "images/icon-ai.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "images/icon-profile.png",
-        "selectedIconPath": "images/icon-profile.png"
-      }
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/data/data", "text": "数据" },
+      { "pagePath": "pages/ai/ai", "text": "AI顾问" },
+      { "pagePath": "pages/profile/profile", "text": "我的" }
     ]
   }
 }
