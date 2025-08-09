@@ -1,0 +1,5 @@
+<view class="container">
+  <text class="title">意见反馈</text>
+  <textarea placeholder="请输入您的意见或建议" value="{{content}}" bindinput="onInput"/>
+  <button class="btn" bindtap="submit">提交</button>
+</view>
