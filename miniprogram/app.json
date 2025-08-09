@@ -7,7 +7,10 @@
     "pages/ai/ai",
     "pages/profile/profile",
     "pages/member/member",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/advisor/home/home",
+    "pages/advisor/review/review",
+    "pages/advisor/chat/chat"
   ],
   "window": {
     "navigationBarTitleText": "体重管理数字医生",

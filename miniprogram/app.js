@@ -1,7 +1,8 @@
 App({
   onLaunch() {
     if (wx.cloud) {
-      wx.cloud.init({ traceUser: true })
+      const envId = 'qingchegnxin-6gd5zp339c7d1586'
+      wx.cloud.init({ traceUser: true, env: envId })
     }
     this.globalData = {
       userInfo: wx.getStorageSync('userInfo') || {},
