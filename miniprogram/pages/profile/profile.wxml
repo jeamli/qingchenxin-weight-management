@@ -1,24 +1,6 @@
 <view class="container">
-  <view class="card user">
-    <image class="avatar" src="{{userInfo.avatar||'/images/default-avatar.png'}}"/>
-    <view class="meta">
-      <text class="name">{{userInfo.nickname||'未设置昵称'}}</text>
-      <text class="sub">会员：{{memberLevel}}</text>
-    </view>
-  </view>
-
-  <view class="card list">
-    <view class="item" bindtap="goMember">
-      <text class="text">会员中心</text>
-      <image class="arrow" src="/images/icon-arrow.png"/>
-    </view>
-    <view class="item" bindtap="goFeedback">
-      <text class="text">意见反馈</text>
-      <image class="arrow" src="/images/icon-arrow.png"/>
-    </view>
-    <view class="item" bindtap="goAdvisor">
-      <text class="text">健康顾问端</text>
-      <image class="arrow" src="/images/icon-arrow.png"/>
-    </view>
+  <view class="card">
+    <text class="title">我的</text>
+    <button class="btn" bindtap="getUser">获取用户信息</button>
   </view>
 </view>

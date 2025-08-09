@@ -1,15 +1,12 @@
 App({
   onLaunch() {
     if (wx.cloud) {
-      const envId = 'qingchegnxin-6gd5zp339c7d1586'
-      wx.cloud.init({ traceUser: true, env: envId })
+      wx.cloud.init({ traceUser: true })
     }
     this.globalData = {
-      userInfo: wx.getStorageSync('userInfo') || {},
-      memberLevel: wx.getStorageSync('memberLevel') || 'free',
-      todayStats: {},
+      userInfo: {},
       systemConfigs: {},
-      isAdvisor: wx.getStorageSync('isAdvisor') || false
+      todayStats: {}
     }
     wx.cloud.callFunction({ name: 'getSystemConfig' })
       .then(res => {

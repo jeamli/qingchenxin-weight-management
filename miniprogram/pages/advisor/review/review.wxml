@@ -1,9 +1,0 @@
-<view class="container">
-  <text class="title">待审核方案</text>
-  <block wx:for="{{items}}" wx:key="id">
-    <view class="item">
-      <text class="name">{{item.user}}</text>
-      <text class="meta">{{item.plan}} · {{item.status}}</text>
-    </view>
-  </block>
-</view>

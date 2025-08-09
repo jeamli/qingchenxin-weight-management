@@ -1,32 +1,20 @@
 <view class="container">
-  <view class="card header">
-    <image class="avatar" src="{{userInfo.avatar||'/images/default-avatar.png'}}"/>
-    <view class="meta">
-      <text class="hello">你好</text>
-      <text class="name">{{userInfo.nickname||'未设置昵称'}}</text>
+  <view class="card">
+    <text class="title">欢迎使用体重管理数字医生</text>
+    <view class="overview">
+      <view class="item" wx:for="{{overview}}" wx:key="label">
+        <text class="label">{{item.label}}</text>
+        <text class="value">{{item.value}}</text>
+      </view>
     </view>
   </view>
-
-  <view class="card overview">
-    <view class="o-grid">
-      <block wx:for="{{overview}}" wx:key="label">
-        <view class="o-item">
-          <text class="o-label">{{item.label}}</text>
-          <text class="o-value">{{item.value}}</text>
-        </view>
-      </block>
-    </view>
-  </view>
-
-  <view class="card quick">
-    <text class="section-title">快捷入口</text>
-    <view class="q-grid">
-      <block wx:for="{{quick}}" wx:key="text">
-        <view class="q-item" bindtap="nav" data-url="{{item.url}}">
-          <image class="q-icon" src="{{item.icon}}"/>
-          <text class="q-text">{{item.text}}</text>
-        </view>
-      </block>
+  <view class="card">
+    <text class="subtitle">快捷入口</text>
+    <view class="quick">
+      <button class="btn" data-url="/pages/ai/ai" bindtap="nav">AI对话</button>
+      <button class="btn" data-url="/pages/data/data?tab=weight" bindtap="nav">记录体重</button>
+      <button class="btn" data-url="/pages/data/data?tab=diet" bindtap="nav">记录饮食</button>
+      <button class="btn" data-url="/pages/data/data?tab=exercise" bindtap="nav">记录运动</button>
     </view>
   </view>
 </view>

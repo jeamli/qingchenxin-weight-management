@@ -1,10 +1,4 @@
-.container{padding:24rpx;background:#f8f8f8;min-height:100vh}
-.card{background:#fff;border:1rpx solid #e5e7eb;border-radius:16rpx;padding:24rpx;margin-bottom:20rpx}
-.user{display:flex;gap:16rpx;align-items:center}
-.avatar{width:96rpx;height:96rpx;border-radius:48rpx;border:2rpx solid #f2f4f7}
-.name{display:block;color:#101828;font-weight:600;font-size:32rpx}
-.sub{display:block;color:#667085;font-size:24rpx;margin-top:4rpx}
-.item{display:flex;align-items:center;justify-content:space-between;padding:20rpx 8rpx;border-bottom:1rpx solid #f2f4f7}
-.item:last-child{border-bottom:none}
-.text{color:#344054;font-size:28rpx}
-.arrow{width:28rpx;height:28rpx}
+.container{padding:24rpx}
+.card{background:#fff;border:1rpx solid #e5e7eb;border-radius:16rpx;padding:20rpx}
+.title{display:block;font-size:32rpx;font-weight:600;color:#101828;margin-bottom:12rpx}
+.btn{background:#22c55e;color:#fff;border-radius:10rpx}

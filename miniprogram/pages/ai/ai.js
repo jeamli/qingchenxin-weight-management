@@ -1,19 +1,5 @@
 Page({
-  data:{
-    messages:[
-      { id:1, sender:'ai', type:'text', content:'你好，我是你的AI健康顾问。' }
-    ],
-    inputText:''
-  },
+  data:{ messages:[{id:1,sender:'bot',content:'你好，我是AI营养助手'}], inputText:'' },
   onInput(e){ this.setData({ inputText:e.detail.value }) },
-  send(){
-    const text = this.data.inputText.trim()
-    if(!text) return
-    const userMsg = { id:Date.now(), sender:'user', type:'text', content:text }
-    this.setData({ messages:[...this.data.messages,userMsg], inputText:'' })
-    setTimeout(()=>{
-      const aiMsg = { id:Date.now()+1, sender:'ai', type:'text', content:'收到：'+text }
-      this.setData({ messages:[...this.data.messages, aiMsg] })
-    },600)
-  }
+  send(){ const t=this.data.inputText.trim(); if(!t) return; const id=Date.now(); this.setData({ messages:[...this.data.messages,{id, sender:'me', content:t},{id:id+1, sender:'bot', content:'已收到：'+t}], inputText:'' }) }
 })
