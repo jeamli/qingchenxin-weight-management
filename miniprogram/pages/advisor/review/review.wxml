@@ -1,0 +1,13 @@
+<view class="container">
+  <text class="title">待审核方案</text>
+  <block wx:for="{{items}}" wx:key="_id">
+    <view class="item">
+      <text class="name">计划ID：{{item.plan_id}}</text>
+      <text class="meta">状态：{{item.review_status}}</text>
+      <view class="row">
+        <button class="btn" data-id="{{item._id}}" data-action="approve" bindtap="act">通过</button>
+        <button class="btn-outline" data-id="{{item._id}}" data-action="reject" bindtap="act">拒绝</button>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,8 @@
+.container{padding:24rpx}
+.title{display:block;font-size:32rpx;font-weight:600;margin-bottom:12rpx}
+.item{padding:12rpx 0;border-bottom:1rpx solid #f2f4f7}
+.name{display:block;color:#344054;font-size:28rpx}
+.meta{display:block;color:#667085;font-size:24rpx;margin:6rpx 0}
+.row{display:flex;gap:12rpx}
+.btn{background:#22c55e;color:#fff;border-radius:10rpx}
+.btn-outline{background:#fff;color:#22c55e;border:1rpx solid #22c55e;border-radius:10rpx}

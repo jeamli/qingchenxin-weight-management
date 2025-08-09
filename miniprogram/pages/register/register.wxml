@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="card">
+    <text class="title">完善基本信息</text>
+    <input class="input" placeholder="昵称(脱敏)" value="{{form.nickname}}" data-key="nickname" bindinput="onInput" />
+    <input class="input" placeholder="性别 male/female" value="{{form.gender}}" data-key="gender" bindinput="onInput" />
+    <input class="input" type="digit" placeholder="年龄" value="{{form.age}}" data-key="age" bindinput="onInput" />
+    <input class="input" type="digit" placeholder="身高(cm)" value="{{form.height}}" data-key="height" bindinput="onInput" />
+    <input class="input" type="digit" placeholder="当前体重(kg)" value="{{form.current_weight}}" data-key="current_weight" bindinput="onInput" />
+    <input class="input" type="digit" placeholder="目标体重(kg)" value="{{form.target_weight}}" data-key="target_weight" bindinput="onInput" />
+    <button class="btn" loading="{{loading}}" bindtap="saveProfile">保存</button>
+  </view>
+  <view class="card">
+    <view class="row">
+      <text class="title">选择健康顾问</text>
+      <button class="btn-outline" bindtap="loadAdvisors">刷新列表</button>
+    </view>
+    <block wx:for="{{advisors}}" wx:key="_id">
+      <view class="advisor" bindtap="pickAdvisor" data-advisor="{{item}}">
+        <text class="name">{{item.name}}</text>
+        <text class="meta">{{item.specialty?item.specialty.join('/'):'-'}}</text>
+      </view>
+    </block>
+    <button class="btn" bindtap="bindAdvisor">绑定所选顾问</button>
+  </view>
+</view>

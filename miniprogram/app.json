@@ -5,7 +5,10 @@
     "pages/index/index",
     "pages/data/data",
     "pages/ai/ai",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/register/register",
+    "pages/plan/plan",
+    "pages/advisor/review/review"
   ],
   "window": {
     "navigationBarTitleText": "体重管理数字医生",

@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card">
+    <text class="title">创建AI方案</text>
+    <view class="form">
+      <input class="input" placeholder="方案名称" value="{{name}}" bindinput="onName" />
+      <button class="btn" loading="{{creating}}" bindtap="create">创建草稿</button>
+    </view>
+  </view>
+  <view class="card">
+    <text class="title">我的方案</text>
+    <block wx:for="{{plans}}" wx:key="_id">
+      <view class="row">
+        <view>
+          <text class="name">{{item.plan_name}}</text>
+          <text class="meta">{{item.status}}</text>
+        </view>
+        <button class="btn-outline" data-id="{{item._id}}" bindtap="requestReview" wx:if="{{item.status==='draft'}}">申请审核</button>
+      </view>
+    </block>
+  </view>
+</view>

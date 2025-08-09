@@ -2,5 +2,9 @@
   <view class="card">
     <text class="title">我的</text>
     <button class="btn" bindtap="getUser">获取用户信息</button>
+    <view style="height:12rpx"></view>
+    <button class="btn-outline" bindtap="goRegister">完善资料/选择顾问</button>
+    <view style="height:12rpx"></view>
+    <button class="btn-outline" bindtap="goPlan">我的方案</button>
   </view>
 </view>
