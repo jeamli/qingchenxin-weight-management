@@ -1,11 +1,4 @@
 Page({
-  data: {
-    memberLevel: 'free',
-    benefits: ['基础体重记录', '基础AI对话']
-  },
-  onShow() {
-    const app = getApp()
-    const level = (app.globalData.memberLevel) || 'free'
-    this.setData({ memberLevel: level })
-  }
+  data:{ memberLevel:'free', expires:'' },
+  onShow(){ const app=getApp(); this.setData({ memberLevel:app.globalData.memberLevel }) }
 })

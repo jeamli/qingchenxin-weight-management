@@ -1,80 +1,13 @@
 <view class="container">
-  <scroll-view class="chat-container" scroll-y scroll-into-view="{{scrollToView}}">
-    <view class="message-list">
-      <block wx:for="{{messages}}" wx:key="id">
-        <view id="msg-{{index}}" class="message-item">
-          <view class="message-content {{item.sender_type === 'user' ? 'user-message' : ''}}">
-            <image class="avatar" src="{{item.sender_type === 'user' ? (userInfo.avatar || '/images/default-avatar.png') : '/images/ai-avatar.png'}}" mode="aspectFill" />
-            <view class="message-bubble {{item.sender_type === 'user' ? 'user-bubble' : 'ai-bubble'}}">
-              <block wx:if="{{item.message_type === 'image'}}">
-                <image class="message-image" src="{{item.image_url}}" mode="widthFix" bindtap="previewImage" data-url="{{item.image_url}}" />
-              </block>
-              <block wx:elif="{{item.message_type === 'text'}}">
-                <text class="message-text">{{item.content}}</text>
-              </block>
-              <text class="message-time">{{formatTime(item.created_at)}}</text>
-            </view>
-          </view>
-        </view>
-      </block>
-      <view class="typing-indicator" wx:if="{{isTyping}}">
-        <view class="typing-dots">
-          <view class="dot"></view>
-          <view class="dot"></view>
-          <view class="dot"></view>
-        </view>
+  <scroll-view class="chat" scroll-y>
+    <block wx:for="{{messages}}" wx:key="id">
+      <view class="msg {{item.sender==='user'?'right':'left'}}">
+        <view class="bubble">{{item.content}}</view>
       </view>
-    </view>
+    </block>
   </scroll-view>
-
-  <view class="quick-actions" wx:if="{{showQuickActions}}">
-    <view class="action-list">
-      <view class="action-item" bindtap="sendQuickMessage" data-text="给我制定一个减重计划">
-        <text class="action-icon">📝</text>
-        <text class="action-text">制定计划</text>
-      </view>
-      <view class="action-item" bindtap="sendQuickMessage" data-text="帮我分析今天的饮食营养">
-        <text class="action-icon">🍽️</text>
-        <text class="action-text">饮食分析</text>
-      </view>
-      <view class="action-item" bindtap="sendQuickMessage" data-text="推荐一套入门运动方案">
-        <text class="action-icon">🏃</text>
-        <text class="action-text">运动推荐</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="input-container">
-    <view class="input-wrapper">
-      <view class="function-buttons">
-        <view class="function-btn" bindtap="toggleQuickActions">
-          <image src="/images/icon-quick.png" mode="aspectFit" />
-        </view>
-        <view class="function-btn" bindtap="takePhoto">
-          <image src="/images/icon-camera.png" mode="aspectFit" />
-        </view>
-        <view class="function-btn" bindtap="chooseImage">
-          <image src="/images/icon-gallery.png" mode="aspectFit" />
-        </view>
-      </view>
-
-      <view class="input-field-wrapper">
-        <textarea class="input-field" value="{{inputText}}" placeholder="和AI顾问聊点什么吧..." show-confirm-bar="false" adjust-position="true" auto-height bindinput="onInputChange" />
-        <view class="input-counter">
-          <text class="counter-text">{{dailyChatCount}} / {{maxDailyChatCount}}</text>
-        </view>
-      </view>
-
-      <view class="send-btn" bindtap="sendMessage">
-        <image src="/images/icon-send.png" mode="aspectFit" />
-      </view>
-    </view>
-  </view>
-
-  <view class="member-tip" wx:if="{{showMemberTip}}">
-    <view class="tip-content">
-      <text class="tip-text">今日AI对话次数已达上限，升级会员可享更多次数</text>
-      <button class="btn btn-small" bindtap="upgradeMember">去升级</button>
-    </view>
+  <view class="inputbar">
+    <textarea class="input" placeholder="和AI聊点什么吧..." value="{{inputText}}" bindinput="onInput" auto-height/>
+    <button class="send" bindtap="send">发送</button>
   </view>
 </view>

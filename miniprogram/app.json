@@ -1,5 +1,6 @@
 {
   "cloud": true,
+  "style": "v2",
   "pages": [
     "pages/index/index",
     "pages/data/data",
@@ -9,15 +10,15 @@
     "pages/feedback/feedback"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "体重管理数字医生",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f8f8f8"
   },
-  "style": "v2",
   "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#3cc51f",
+    "color": "#667085",
+    "selectedColor": "#22c55e",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [

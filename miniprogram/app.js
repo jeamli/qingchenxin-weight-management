@@ -1,19 +1,14 @@
 App({
   onLaunch() {
-    wx.cloud && wx.cloud.init({ traceUser: true })
-
-    const userInfo = wx.getStorageSync('userInfo') || {}
-    const memberLevel = wx.getStorageSync('memberLevel') || 'free'
-    const todayStats = wx.getStorageSync('todayStats') || {}
-
+    if (wx.cloud) {
+      wx.cloud.init({ traceUser: true })
+    }
     this.globalData = {
-      userInfo,
-      memberLevel,
-      todayStats,
+      userInfo: wx.getStorageSync('userInfo') || {},
+      memberLevel: wx.getStorageSync('memberLevel') || 'free',
+      todayStats: {},
       systemConfigs: {}
     }
-
-    // 拉取系统配置（用于配额/费用等）
     wx.cloud.callFunction({ name: 'getSystemConfig' })
       .then(res => {
         if (res && res.result && res.result.systemConfigs) {
