@@ -12,6 +12,16 @@
     { "name": "addDietRecord", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
     { "name": "listDietRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
     { "name": "addExerciseRecord", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
-    { "name": "listExerciseRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 }
+    { "name": "listExerciseRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "updateUserProfile", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listAdvisors", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "bindAdvisor", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "createAIPlan", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listAIPlans", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "requestPlanReview", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listPendingReviews", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "actOnReview", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "addChatMessage", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listChatMessages", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 }
   ]
 }
