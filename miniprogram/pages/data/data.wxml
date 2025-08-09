@@ -1,10 +1,71 @@
 <view class="container">
   <view class="tabs">
-    <button class="tab">体重管理</button>
-    <button class="tab">饮食管理</button>
-    <button class="tab">运动管理</button>
+    <button class="tab" data-tab="weight" bindtap="setTab">体重管理</button>
+    <button class="tab" data-tab="diet" bindtap="setTab">饮食管理</button>
+    <button class="tab" data-tab="exercise" bindtap="setTab">运动管理</button>
   </view>
-  <view class="card">
-    <text>这里展示/录入数据（占位）</text>
-  </view>
+
+  <block wx:if="{{tab==='weight'}}">
+    <view class="card">
+      <text class="subtitle">记录体重</text>
+      <view class="form">
+        <input class="input" type="digit" placeholder="体重(kg)" value="{{weightForm.weight}}" data-form="weightForm" data-key="weight" bindinput="onInput" />
+        <button class="btn" bindtap="submitWeight">保存</button>
+      </view>
+    </view>
+    <view class="card">
+      <text class="subtitle">最近记录</text>
+      <block wx:for="{{weightList}}" wx:key="_id">
+        <view class="row">
+          <text>{{item.weight}}kg</text>
+          <text class="muted">{{item.bmi?('BMI '+item.bmi):''}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{tab==='diet'}}">
+    <view class="card">
+      <text class="subtitle">记录饮食</text>
+      <view class="form">
+        <input class="input" placeholder="食物名称" value="{{dietForm.food_name}}" data-form="dietForm" data-key="food_name" bindinput="onInput" />
+        <input class="input" type="digit" placeholder="数量" value="{{dietForm.quantity}}" data-form="dietForm" data-key="quantity" bindinput="onInput" />
+        <input class="input" placeholder="单位(默认g)" value="{{dietForm.unit}}" data-form="dietForm" data-key="unit" bindinput="onInput" />
+        <input class="input" type="digit" placeholder="热量(kcal) 可选" value="{{dietForm.calories}}" data-form="dietForm" data-key="calories" bindinput="onInput" />
+        <button class="btn" bindtap="submitDiet">保存</button>
+      </view>
+    </view>
+    <view class="card">
+      <text class="subtitle">最近记录</text>
+      <block wx:for="{{dietList}}" wx:key="_id">
+        <view class="row">
+          <text>{{item.food_name}}</text>
+          <text class="muted">{{item.quantity}}{{item.unit||''}} {{item.calories?('· '+item.calories+'kcal'):''}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{tab==='exercise'}}">
+    <view class="card">
+      <text class="subtitle">记录运动</text>
+      <view class="form">
+        <input class="input" placeholder="运动名称" value="{{exerciseForm.exercise_name}}" data-form="exerciseForm" data-key="exercise_name" bindinput="onInput" />
+        <input class="input" type="digit" placeholder="时长(分钟)" value="{{exerciseForm.duration}}" data-form="exerciseForm" data-key="duration" bindinput="onInput" />
+        <input class="input" placeholder="类型(cardio/strength等)" value="{{exerciseForm.exercise_type}}" data-form="exerciseForm" data-key="exercise_type" bindinput="onInput" />
+        <input class="input" placeholder="强度(low/medium/high)" value="{{exerciseForm.intensity}}" data-form="exerciseForm" data-key="intensity" bindinput="onInput" />
+        <input class="input" type="digit" placeholder="消耗(kcal) 可选" value="{{exerciseForm.calories_burned}}" data-form="exerciseForm" data-key="calories_burned" bindinput="onInput" />
+        <button class="btn" bindtap="submitExercise">保存</button>
+      </view>
+    </view>
+    <view class="card">
+      <text class="subtitle">最近记录</text>
+      <block wx:for="{{exerciseList}}" wx:key="_id">
+        <view class="row">
+          <text>{{item.exercise_name}}</text>
+          <text class="muted">{{item.duration}}min {{item.intensity}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
 </view>

@@ -1,11 +1,17 @@
 {
   "version": "2.0",
-  "envId": "your-env-id",
+  "envId": "your-env-id", // 请替换为你的实际云环境ID
   "functionRoot": "cloudfunctions",
   "functions": [
     { "name": "initDatabase", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
     { "name": "getUserInfo", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
     { "name": "getTodayStats", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
-    { "name": "getSystemConfig", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 }
+    { "name": "getSystemConfig", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "addWeightRecord", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listWeightRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "addDietRecord", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listDietRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "addExerciseRecord", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 },
+    { "name": "listExerciseRecords", "timeout": 60, "runtime": "Nodejs18.15", "memorySize": 256 }
   ]
 }
