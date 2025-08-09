@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "envId": "qingchegnxin-6gd5zp339c7d1586",
+  "functionRoot": "cloudfunctions",
+  "functions": [
+    {
+      "name": "initDatabase",
+      "timeout": 60,
+      "runtime": "Nodejs18.15",
+      "memorySize": 256
+    }
+  ]
+}
