@@ -1,0 +1,18 @@
+<view class="container">
+  <text class="title">顾问工作台</text>
+  <view class="card">
+    <view class="row">
+      <button class="btn" bindtap="goReview">待审核方案</button>
+      <button class="btn" bindtap="goChat">患者聊天</button>
+    </view>
+  </view>
+  <view class="card">
+    <text class="subtitle">患者列表</text>
+    <block wx:for="{{patients}}" wx:key="id">
+      <view class="patient">
+        <text class="name">{{item.name}}</text>
+        <text class="meta">{{item.weight}}kg · BMI {{item.bmi}} · {{item.lastActive}}</text>
+      </view>
+    </block>
+  </view>
+</view>

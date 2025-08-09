@@ -7,7 +7,8 @@ App({
       userInfo: wx.getStorageSync('userInfo') || {},
       memberLevel: wx.getStorageSync('memberLevel') || 'free',
       todayStats: {},
-      systemConfigs: {}
+      systemConfigs: {},
+      isAdvisor: wx.getStorageSync('isAdvisor') || false
     }
     wx.cloud.callFunction({ name: 'getSystemConfig' })
       .then(res => {

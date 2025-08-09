@@ -16,5 +16,9 @@
       <text class="text">意见反馈</text>
       <image class="arrow" src="/images/icon-arrow.png"/>
     </view>
+    <view class="item" bindtap="goAdvisor">
+      <text class="text">健康顾问端</text>
+      <image class="arrow" src="/images/icon-arrow.png"/>
+    </view>
   </view>
 </view>

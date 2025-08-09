@@ -1,0 +1,10 @@
+.container{padding:24rpx;background:#f8f8f8;min-height:100vh}
+.title{display:block;font-size:32rpx;font-weight:600;margin-bottom:12rpx;color:#101828}
+.card{background:#fff;border:1rpx solid #e5e7eb;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx}
+.row{display:flex;gap:12rpx}
+.btn{flex:1;background:#22c55e;color:#fff;border-radius:10rpx}
+.subtitle{display:block;font-size:28rpx;font-weight:600;margin-bottom:12rpx;color:#101828}
+.patient{padding:12rpx 0;border-bottom:1rpx solid #f2f4f7}
+.patient:last-child{border-bottom:none}
+.name{display:block;color:#344054;font-size:28rpx}
+.meta{display:block;color:#667085;font-size:24rpx;margin-top:4rpx}

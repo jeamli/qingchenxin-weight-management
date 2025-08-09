@@ -1,0 +1,1 @@
+.container{padding:24rpx}.title{display:block;font-size:32rpx;font-weight:600;margin-bottom:12rpx}.item{padding:12rpx 0;border-bottom:1rpx solid #f2f4f7}.item:last-child{border-bottom:none}.name{display:block;color:#344054;font-size:28rpx}.meta{display:block;color:#667085;font-size:24rpx;margin-top:4rpx}
