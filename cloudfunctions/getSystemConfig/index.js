@@ -10,36 +10,36 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   try {
-    // 查询系统配置
-    const configResult = await db.collection('system_config').limit(1).get()
-    
-    let systemConfig = {
-      aiDailyLimit: 5,
-      reviewTimeoutHours: 24,
-      maxWeightRecordsPerDay: 10,
-      maxDietRecordsPerDay: 20,
-      maxExerciseRecordsPerDay: 10,
-      membershipUpgradeFee: 9900,
-      reviewFee: 5000,
-      advisorCommissionRate: 0.7
+    // 统一集合名：system_configs（复数）
+    const configs = await db.collection('system_configs').get()
+
+    // 默认配置（蛇形键名，便于与DB一致）
+    const defaultMap = {
+      ai_daily_limit_free: 5,
+      ai_daily_limit_standard: 20,
+      ai_daily_limit_premium: -1,
+      review_timeout_hours: 24,
+      max_weight_records_per_day: 10,
+      max_diet_records_per_day: 20,
+      max_exercise_records_per_day: 10,
+      membership_upgrade_fee: 9900,
+      review_fee: 5000,
+      advisor_commission_rate: 0.7
     }
 
-    if (configResult.data.length > 0) {
-      systemConfig = { ...systemConfig, ...configResult.data[0] }
-    } else {
-      // 如果配置不存在，创建默认配置
-      await db.collection('system_config').add({
-        data: {
-          ...systemConfig,
-          createTime: new Date(),
-          updateTime: new Date()
-        }
-      })
-    }
+    // 将 DB 配置聚合为 map（key -> value）
+    const dbMap = {}
+    configs.data.forEach(c => {
+      if (c && c.config_key != null) {
+        dbMap[c.config_key] = c.config_value
+      }
+    })
+
+    const merged = { ...defaultMap, ...dbMap }
 
     return {
       success: true,
-      systemConfig: systemConfig
+      systemConfigs: merged
     }
   } catch (error) {
     console.error('获取系统配置失败:', error)

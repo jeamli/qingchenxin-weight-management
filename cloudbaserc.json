@@ -8,6 +8,24 @@
       "timeout": 60,
       "runtime": "Nodejs18.15",
       "memorySize": 256
+    },
+    {
+      "name": "getUserInfo",
+      "timeout": 60,
+      "runtime": "Nodejs18.15",
+      "memorySize": 256
+    },
+    {
+      "name": "getTodayStats",
+      "timeout": 60,
+      "runtime": "Nodejs18.15",
+      "memorySize": 256
+    },
+    {
+      "name": "getSystemConfig",
+      "timeout": 60,
+      "runtime": "Nodejs18.15",
+      "memorySize": 256
     }
   ]
 }

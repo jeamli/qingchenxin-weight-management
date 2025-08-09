@@ -1,0 +1,24 @@
+page {
+  background-color: #f8f8f8;
+}
+
+.btn {
+  border: none;
+}
+
+.btn-primary {
+  background: #3cc51f;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: #3cc51f;
+  border: 2rpx solid #3cc51f;
+}
+
+.btn-small {
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+}

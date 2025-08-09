@@ -25,24 +25,27 @@ exports.main = async (event, context) => {
 
     if (userResult.data.length > 0) {
       userInfo = userResult.data[0]
-      memberLevel = userInfo.memberLevel || 'free'
-      memberExpire = userInfo.memberExpire || null
+      // 统一蛇形字段，向前兼容旧字段
+      memberLevel = userInfo.member_level || userInfo.memberLevel || 'free'
+      memberExpire = userInfo.member_expire || userInfo.memberExpire || null
       
       // 如果有顾问信息，查询顾问详情
-      if (userInfo.advisorId) {
-        const advisorResult = await db.collection('advisors').doc(userInfo.advisorId).get()
+      const advisorId = userInfo.advisor_id || userInfo.advisorId
+      if (advisorId) {
+        const advisorResult = await db.collection('advisors').doc(advisorId).get()
         if (advisorResult.data) {
           advisorInfo = advisorResult.data
         }
       }
     } else {
-      // 如果用户不存在，创建新用户
+      // 如果用户不存在，创建新用户（蛇形命名）
+      const now = new Date()
       const newUser = {
-        openid: openid,
-        createTime: new Date(),
-        updateTime: new Date(),
-        memberLevel: 'free',
-        memberExpire: null,
+        openid,
+        member_level: 'free',
+        member_expire: null,
+        created_at: now,
+        updated_at: now,
         profile: {
           nickname: '',
           avatar: '',
@@ -50,7 +53,7 @@ exports.main = async (event, context) => {
           age: null,
           height: null,
           weight: null,
-          targetWeight: null
+          target_weight: null
         }
       }
       
@@ -66,10 +69,10 @@ exports.main = async (event, context) => {
 
     return {
       success: true,
-      userInfo: userInfo,
-      advisorInfo: advisorInfo,
-      memberLevel: memberLevel,
-      memberExpire: memberExpire
+      userInfo,
+      advisorInfo,
+      memberLevel,
+      memberExpire
     }
   } catch (error) {
     console.error('获取用户信息失败:', error)
