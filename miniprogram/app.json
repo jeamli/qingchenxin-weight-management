@@ -1,7 +1,12 @@
 {
+  "cloud": true,
   "pages": [
+    "pages/index/index",
+    "pages/data/data",
     "pages/ai/ai",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/member/member",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,6 +21,18 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon-home.png",
+        "selectedIconPath": "images/icon-home.png"
+      },
+      {
+        "pagePath": "pages/data/data",
+        "text": "数据",
+        "iconPath": "images/icon-data.png",
+        "selectedIconPath": "images/icon-data.png"
+      },
       {
         "pagePath": "pages/ai/ai",
         "text": "AI顾问",

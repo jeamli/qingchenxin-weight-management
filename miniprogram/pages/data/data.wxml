@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="key">
+      <view class="tab {{active===item.key?'active':''}}" data-key="{{item.key}}" bindtap="switchTab">{{item.text}}</view>
+    </block>
+  </view>
+
+  <view wx:if="{{active==='weight'}}" class="panel">体重记录、趋势、目标设定（占位）</view>
+  <view wx:if="{{active==='diet'}}" class="panel">饮食记录、营养分析、热量统计（占位）</view>
+  <view wx:if="{{active==='exercise'}}" class="panel">运动记录、消耗计算、计划推荐（占位）</view>
+  <view wx:if="{{active==='plan'}}" class="panel">我的方案、对比、执行跟踪（占位）</view>
+</view>
